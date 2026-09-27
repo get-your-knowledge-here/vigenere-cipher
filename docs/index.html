@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vigenère Cipher Decoder &amp; Encoder | Crack the Key Online</title>
+  <meta name="description" content="Free online Vigenère cipher decoder and encoder. Encrypt or decrypt with a keyword, or crack an unknown key automatically with index of coincidence and frequency analysis. 100% in your browser." />
+  <meta name="keywords" content="vigenere cipher, vigenere cipher decoder, vigenere cipher encoder, vigenere solver, crack vigenere without key, polyalphabetic cipher, index of coincidence, cryptography, cipher tool" />
+  <meta name="author" content="Sylvester Das" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://get-your-knowledge-here.github.io/vigenere-cipher/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-192.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vigenère Cipher Playground" />
+  <meta property="og:title" content="Vigenère Cipher Decoder &amp; Encoder: Crack the Key Online" />
+  <meta property="og:description" content="Encrypt and decrypt with a keyword, or recover an unknown Vigenère key in your browser. Can you crack my secret message?" />
+  <meta property="og:url" content="https://get-your-knowledge-here.github.io/vigenere-cipher/" />
+  <meta property="og:image" content="https://get-your-knowledge-here.github.io/vigenere-cipher/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="vigenere-cipher: Encrypt, Decrypt, Crack the key" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://get-your-knowledge-here.github.io/vigenere-cipher/assets/og-image.jpg" />
+  <meta name="twitter:title" content="Vigenère Cipher Decoder &amp; Encoder: Crack the Key Online" />
+  <meta name="twitter:description" content="Encrypt and decrypt with a keyword, or recover an unknown Vigenère key in your browser. Can you crack my secret message?" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://get-your-knowledge-here.github.io/vigenere-cipher/#app",
+        "name": "Vigenère Cipher Decoder & Encoder",
+        "url": "https://get-your-knowledge-here.github.io/vigenere-cipher/",
+        "image": "https://get-your-knowledge-here.github.io/vigenere-cipher/assets/og-image.jpg",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": ["Vigenère cipher encoder", "Vigenère cipher decoder", "Crack unknown keys", "Index of coincidence key length finder", "Shareable cipher challenges"],
+        "author": { "@id": "https://get-your-knowledge-here.github.io/vigenere-cipher/#author" },
+        "publisher": { "@id": "https://www.minifyn.com/#org" }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "@gykh/vigenere-cipher",
+        "description": "Zero-dependency Vigenère cipher library for Node.js with Strings, Buffers, chunk-safe Streams and automatic key cracking.",
+        "codeRepository": "https://github.com/get-your-knowledge-here/vigenere-cipher",
+        "programmingLanguage": ["JavaScript", "TypeScript"],
+        "runtimePlatform": "Node.js",
+        "license": "https://opensource.org/licenses/MIT",
+        "author": { "@id": "https://get-your-knowledge-here.github.io/vigenere-cipher/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://get-your-knowledge-here.github.io/vigenere-cipher/#author",
+        "name": "Sylvester Das",
+        "url": "https://www.sylvesterdas.com",
+        "worksFor": { "@id": "https://www.minifyn.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.minifyn.com/#org",
+        "name": "MiniFyn",
+        "url": "https://www.minifyn.com",
+        "slogan": "The simplest way to shorten, share, and track your links."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a Vigenère cipher?", "acceptedAnswer": { "@type": "Answer", "text": "A Vigenère cipher encrypts text with a keyword. Each letter of the key picks a different Caesar shift (A = 0, B = 1 … Z = 25), and the key repeats along the message. With the key LEMON, ATTACKATDAWN becomes LXFOPVEFRNHR." } },
+          { "@type": "Question", "name": "How do I decode a Vigenère cipher without the key?", "acceptedAnswer": { "@type": "Answer", "text": "Paste the ciphertext into this tool. The key cracker guesses the key length with the index of coincidence, then solves each column as a Caesar cipher with English letter frequencies. It works best with 100 or more letters of English text." } },
+          { "@type": "Question", "name": "Is the Vigenère cipher secure?", "acceptedAnswer": { "@type": "Answer", "text": "No. It was called the indecipherable cipher for three centuries, but frequency analysis breaks it in milliseconds today. Use it for puzzles, CTFs and teaching, never for real secrets." } },
+          { "@type": "Question", "name": "Is my text sent to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All encryption, decryption and cracking runs locally in your browser." } },
+          { "@type": "Question", "name": "Can I use this Vigenère cipher in my own code?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Install the free, MIT-licensed npm package @gykh/vigenere-cipher. It supports strings, buffers and streams, plus automatic key cracking, with TypeScript types." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-elevated: #21262d;
+      --border: #30363d;
+      --border-focus: #58a6ff;
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --accent-subtle: rgba(56, 139, 253, 0.15);
+      --success: #3fb950;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.18s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      display: block;
+    }
+
+    .logo-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .logo-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    main {
+      flex: 1;
+      max-width: 1080px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .playground-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      align-items: center;
+      background: var(--surface-elevated);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .control-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shift-badge {
+      background: var(--accent-subtle);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--surface-elevated);
+      border-color: var(--border-focus);
+    }
+
+    .btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .alphabet-mapping {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      color: var(--text-muted);
+    }
+
+    .alphabet-mapping span.plain {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .alphabet-mapping span.cipher {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .editors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .editors-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .editor-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pane-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 0.925rem;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      min-height: 160px;
+      resize: vertical;
+      outline: none;
+      transition: var(--transition);
+      line-height: 1.6;
+    }
+
+    textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .copy-btn:hover {
+      text-decoration: underline;
+    }
+
+    .cracker-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .section-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .cracker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.75rem;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 0.25rem;
+    }
+
+    .crack-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .crack-card:hover {
+      border-color: var(--border-focus);
+      transform: translateY(-1px);
+    }
+
+    .crack-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .crack-card-text {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text);
+      word-break: break-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--success);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer p + p {
+      margin-top: 0.4rem;
+    }
+
+    .intro {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 760px;
+    }
+
+    .intro strong {
+      color: var(--text);
+    }
+
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .share-row a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .share-row a:hover {
+      text-decoration: underline;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0d1117;
+    }
+
+    .btn.primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .promo {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(88, 166, 255, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.45);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .promo-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      transition: var(--transition);
+    }
+
+    .promo-card:hover {
+      border-color: #a78bfa;
+      transform: translateY(-1px);
+    }
+
+    .promo-card strong {
+      font-size: 0.95rem;
+    }
+
+    .promo-card span {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .promo-card em {
+      font-style: normal;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a78bfa;
+      margin-top: auto;
+    }
+
+    .content {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .content h2 {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .content p + p,
+    .content ol {
+      margin-top: 0.5rem;
+    }
+
+    .content ol {
+      padding-left: 1.2rem;
+    }
+
+    .content code,
+    .content pre {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+
+    .content pre {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .content a {
+      color: var(--accent);
+    }
+
+    .faq {
+      grid-column: 1 / -1;
+    }
+
+    .faq details {
+      border-top: 1px solid var(--border);
+      padding: 0.75rem 0;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .faq details p {
+      margin-top: 0.5rem;
+    }
+
+    /* Brand palette: the GYKH mint on dark */
+    :root {
+      --border-focus: #00d9a6;
+      --accent: #00d9a6;
+      --accent-hover: #00ffc3;
+      --accent-subtle: rgba(0, 217, 166, 0.14);
+    }
+
+    .btn.active,
+    .btn.primary {
+      color: #0d1117;
+    }
+
+    textarea:focus,
+    .key-input:focus {
+      box-shadow: 0 0 0 2px rgba(0, 217, 166, 0.2);
+    }
+
+    .key-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 0.75rem;
+      outline: none;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    .key-input:focus {
+      border-color: var(--border-focus);
+    }
+
+    .key-input.invalid {
+      border-color: #f85149;
+    }
+
+    .key-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .key-hint.error {
+      color: #f85149;
+    }
+
+    .alphabet-mapping .row-label {
+      display: inline-block;
+      width: 4.5em;
+    }
+
+    .crack-result {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .crack-panel {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      min-width: 0;
+    }
+
+    .crack-panel h3 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .found-key {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .crack-text {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text);
+      max-height: 7.5em;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .ioc-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 110px;
+    }
+
+    .ioc-bar {
+      flex: 1;
+      background: var(--surface-elevated);
+      border-radius: 3px 3px 0 0;
+      position: relative;
+      min-height: 2px;
+    }
+
+    .ioc-bar.picked {
+      background: var(--accent);
+    }
+
+    .ioc-axis {
+      display: flex;
+      gap: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .ioc-axis span {
+      flex: 1;
+      text-align: center;
+    }
+
+    .warn {
+      font-size: 0.8rem;
+      color: #d29922;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo-group">
+        <img class="logo-icon" src="assets/logo-96.png" width="40" height="40" alt="Get Your Knowledge Here logo" />
+        <div>
+          <h1 class="logo-title">Vigenère Cipher Decoder &amp; Encoder</h1>
+          <p class="logo-subtitle">Free &amp; private · Powered by @gykh/vigenere-cipher</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="https://github.com/get-your-knowledge-here/vigenere-cipher" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="nav-link" href="https://www.npmjs.com/package/@gykh/vigenere-cipher" target="_blank" rel="noopener">npm ↗</a>
+        <a class="nav-link" href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=nav" target="_blank" rel="noopener">MiniFyn ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">Encrypt and decrypt text with a <strong>Vigenère keyword cipher</strong>, or paste a secret message and <strong>crack the key automatically</strong> with frequency analysis. Everything runs in your browser; nothing is uploaded.</p>
+
+    <div class="playground-card">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label class="control-label" for="keyInput">
+            <span>Keyword</span>
+            <span class="shift-badge" id="keyDisplay">Length: 5</span>
+          </label>
+          <input class="key-input" id="keyInput" value="LEMON" maxlength="100" autocomplete="off" spellcheck="false" />
+          <span class="key-hint" id="keyHint">Letters A-Z only. A = shift 0, B = 1 … Z = 25.</span>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">Mode &amp; Presets</div>
+          <div class="btn-group">
+            <button class="btn active" id="btnEncrypt">Encrypt</button>
+            <button class="btn" id="btnDecrypt">Decrypt</button>
+            <button class="btn" id="btnLemon">LEMON</button>
+            <button class="btn" id="btnSecret">SECRET</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="alphabet-mapping" id="keyMapping"></div>
+
+      <div class="editors-grid">
+        <div class="editor-pane">
+          <div class="pane-header">
+            <span id="inputLabel">Plaintext Input</span>
+            <span id="inputLength">0 chars</span>
+          </div>
+          <textarea id="inputText" maxlength="1000" placeholder="Type or paste text to encrypt/decrypt...">The Vigenere cipher was called the indecipherable cipher for three hundred years. Then Charles Babbage and Friedrich Kasiski noticed that repeated words in the message leave repeated patterns in the ciphertext, and the whole thing fell apart. Today a few lines of code find the key in milliseconds.</textarea>
+        </div>
+
+        <div class="editor-pane">
+          <div class="pane-header">
+            <span id="outputLabel">Ciphertext Output</span>
+            <button class="copy-btn" id="btnCopyOutput">Copy Output</button>
+          </div>
+          <textarea id="outputText" readonly placeholder="Output will appear here..."></textarea>
+        </div>
+      </div>
+
+      <div class="share-row">
+        <button class="btn primary" id="btnShare">🔗 Share as a challenge</button>
+        <span>Sends the encrypted text only; your friend has to crack the key.
+          Want a short link and to see who clicked? <a id="minifynShare" href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=share" target="_blank" rel="noopener">Shorten it with MiniFyn →</a></span>
+      </div>
+    </div>
+
+    <div class="cracker-section">
+      <div>
+        <h2 class="section-title">Key Cracker</h2>
+        <p class="section-desc" id="crackDesc">Recovers the key of the ciphertext above without knowing it: the index of coincidence finds the key length, then each column is solved as a Caesar cipher.</p>
+      </div>
+
+      <div class="crack-result">
+        <div class="crack-panel">
+          <h3>Recovered key</h3>
+          <div class="found-key" id="foundKey">…</div>
+          <p class="warn" id="crackWarn" hidden>Short text: cracking needs about 100+ letters of English, so this key may be wrong.</p>
+          <div class="btn-group">
+            <button class="btn" id="btnUseKey">Decrypt with this key</button>
+            <button class="btn" id="btnCopyCrack">Copy plaintext</button>
+          </div>
+        </div>
+        <div class="crack-panel">
+          <h3>Index of coincidence by key length (English ≈ 0.066, random ≈ 0.038)</h3>
+          <div class="ioc-chart" id="iocChart"></div>
+          <div class="ioc-axis" id="iocAxis"></div>
+        </div>
+        <div class="crack-panel">
+          <h3>Decrypted with the recovered key</h3>
+          <div class="crack-text" id="crackText"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="promo" aria-labelledby="promoTitle">
+      <div>
+        <h2 class="section-title" id="promoTitle">Free privacy &amp; sharing tools from MiniFyn</h2>
+        <p class="section-desc">This playground is made by the team behind <a href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-intro" target="_blank" rel="noopener" style="color:#a78bfa">MiniFyn</a>, the simplest way to shorten, share, and track your links.</p>
+      </div>
+      <div class="promo-grid">
+        <a class="promo-card" href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-minifyn" target="_blank" rel="noopener">
+          <strong>🔗 MiniFyn</strong>
+          <span>Lightning-fast edge link shortening, bio-links, QR code generator and link analytics with built-in threat protection.</span>
+          <em>Shorten a link free →</em>
+        </a>
+        <a class="promo-card" href="https://www.minifyn.com/scamguard?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-scamguard" target="_blank" rel="noopener">
+          <strong>🛡️ ScamGuard</strong>
+          <span>Decoded a suspicious link? Inspect links, QR codes and redirect chains for phishing before you open them.</span>
+          <em>Check a link →</em>
+        </a>
+        <a class="promo-card" href="https://www.minifyn.com/censorfyn?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-censorfyn" target="_blank" rel="noopener">
+          <strong>🙈 CensorFyn</strong>
+          <span>Auto-detect and irreversibly redact faces, passports, credit cards, PII text and QR codes, 100% offline.</span>
+          <em>Redact media →</em>
+        </a>
+        <a class="promo-card" href="https://www.minifyn.com/clipfyn?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-clipfyn" target="_blank" rel="noopener">
+          <strong>🎬 ClipFyn</strong>
+          <span>Inspect, crop and fit videos on-device for compatible sharing, with no quality loss or uploads.</span>
+          <em>Prep a video →</em>
+        </a>
+      </div>
+      <p class="section-desc">Get them free:
+        <a href="https://chromewebstore.google.com/detail/scamguard-link-checker/cendbppkhplamddjfnbhgbejnpmfmlbi?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=promo-stores" target="_blank" rel="noopener" style="color:#a78bfa">ScamGuard for Chrome</a> ·
+        <a href="https://play.google.com/store/apps/details?id=com.minifyn.linkguard&amp;referrer=utm_source%3Dvigenere-cipher%26utm_medium%3Dreferral%26utm_campaign%3Dplayground%26utm_content%3Dpromo-stores" target="_blank" rel="noopener" style="color:#a78bfa">ScamGuard for Android</a> ·
+        <a href="https://play.google.com/store/apps/details?id=com.minifyn.censorfyn&amp;referrer=utm_source%3Dvigenere-cipher%26utm_medium%3Dreferral%26utm_campaign%3Dplayground%26utm_content%3Dpromo-stores" target="_blank" rel="noopener" style="color:#a78bfa">CensorFyn for Android</a> ·
+        <a href="https://play.google.com/store/apps/details?id=com.minifyn.clipfyn&amp;referrer=utm_source%3Dvigenere-cipher%26utm_medium%3Dreferral%26utm_campaign%3Dplayground%26utm_content%3Dpromo-stores" target="_blank" rel="noopener" style="color:#a78bfa">ClipFyn for Android</a>
+      </p>
+    </section>
+
+    <section class="content">
+      <div>
+        <h2>What is a Vigenère cipher?</h2>
+        <p>The Vigenère cipher encrypts text with a keyword. Each key letter picks its own Caesar shift (<code>A = 0</code>, <code>B = 1</code> … <code>Z = 25</code>) and the key repeats along the message, so the same letter encrypts differently each time. With the key <code>LEMON</code>, <code>ATTACKATDAWN → LXFOPVEFRNHR</code>.</p>
+        <p>Spaces, digits and punctuation stay unchanged and do not advance the key.</p>
+      </div>
+      <div>
+        <h2>How to decode a Vigenère cipher</h2>
+        <ol>
+          <li><strong>Know the key?</strong> Choose <em>Decrypt</em>, type the keyword, and paste the message.</li>
+          <li><strong>No key?</strong> Choose <em>Decrypt</em> and paste it anyway. The Key Cracker finds the key length from the index of coincidence, then solves each column with English letter frequencies.</li>
+          <li><strong>Wrong result?</strong> Cracking is statistical. Give it more text; 100+ letters of English works reliably.</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Use it in your code</h2>
+        <p>Everything on this page is available as a free, MIT-licensed, zero-dependency npm package with TypeScript types.</p>
+        <pre>npm install @gykh/vigenere-cipher
+
+import { encryptString, crack } from "@gykh/vigenere-cipher";
+encryptString("ATTACKATDAWN", "LEMON"); // "LXFOPVEFRNHR"
+crack(secret).key; // "LEMON"</pre>
+        <p><a href="https://github.com/get-your-knowledge-here/vigenere-cipher" target="_blank" rel="noopener">Star it on GitHub</a> · <a href="https://www.npmjs.com/package/@gykh/vigenere-cipher" target="_blank" rel="noopener">View on npm</a> · <a href="https://youtube.com/shorts/rZkRROJNB_s" target="_blank" rel="noopener">Watch the 30s video</a></p>
+      </div>
+      <div class="faq">
+        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>How is Vigenère different from a Caesar cipher?</summary>
+          <p>A Caesar cipher uses one shift for the whole message, so there are only 25 keys to try. Vigenère uses a different shift for each key letter, which hides single-letter frequencies. A one-letter Vigenère key is exactly a Caesar cipher. Try the <a href="https://get-your-knowledge-here.github.io/caesar-cipher/">Caesar cipher decoder</a> too.</p>
+        </details>
+        <details>
+          <summary>Is the Vigenère cipher secure?</summary>
+          <p>No. It was called <em>le chiffre indéchiffrable</em> for three centuries, but as the cracker above shows, frequency analysis recovers the key in milliseconds. Use it for puzzles, CTFs, escape rooms and teaching, never for real secrets.</p>
+        </details>
+        <details>
+          <summary>Is my text sent to a server?</summary>
+          <p>No. All encryption, decryption and cracking runs locally in your browser. Challenge links carry only the encrypted text, inside the link itself.</p>
+        </details>
+        <details>
+          <summary>How do I share a secret message?</summary>
+          <p>Encrypt your text, press <em>Share as a challenge</em>, and send the link. Your friend sees only the scrambled text and has to crack the key. To get a short, tidy link and see how many people opened it, <a href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=faq" target="_blank" rel="noopener">shorten it with MiniFyn</a>.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <footer>
+    <p>MIT License © 2026 <a href="https://github.com/get-your-knowledge-here/vigenere-cipher" target="_blank" rel="noopener">get-your-knowledge-here</a> • Created by <a href="https://www.sylvesterdas.com" target="_blank" rel="noopener">Sylvester Das</a></p>
+    <p>A free tool by <a href="https://www.minifyn.com/?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=footer" target="_blank" rel="noopener">MiniFyn</a>: the simplest way to shorten, share, and track your links · <a href="https://www.minifyn.com/scamguard?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=footer" target="_blank" rel="noopener">ScamGuard</a> · <a href="https://www.minifyn.com/censorfyn?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=footer" target="_blank" rel="noopener">CensorFyn</a> · <a href="https://www.minifyn.com/clipfyn?utm_source=vigenere-cipher&amp;utm_medium=referral&amp;utm_campaign=playground&amp;utm_content=footer" target="_blank" rel="noopener">ClipFyn</a></p>
+  </footer>
+
+  <script>
+    // Core Vigenère logic, same as @gykh/vigenere-cipher
+    const UPPER_A = 65, UPPER_Z = 90, LOWER_A = 97, LOWER_Z = 122, ALPHABET_LEN = 26;
+    const MAX_KEY_LENGTH = 20;
+    const ENGLISH_FREQ = [
+      0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228, 0.02015, 0.06094,
+      0.06966, 0.00153, 0.00772, 0.04025, 0.02406, 0.06749, 0.07507, 0.01929,
+      0.00095, 0.05987, 0.06327, 0.09056, 0.02758, 0.00978, 0.0236, 0.0015,
+      0.01974, 0.00074,
+    ];
+
+    function keyToShifts(key, direction) {
+      const shifts = [];
+      for (let i = 0; i < key.length; i++) {
+        const shift = (key.charCodeAt(i) | 0x20) - LOWER_A;
+        shifts.push((direction * shift + ALPHABET_LEN) % ALPHABET_LEN);
+      }
+      return shifts;
+    }
+
+    function cipherString(str, shifts) {
+      let result = '';
+      let pos = 0;
+      for (let i = 0; i < str.length; i++) {
+        const code = str.charCodeAt(i);
+        const shift = shifts[pos % shifts.length];
+        if (code >= UPPER_A && code <= UPPER_Z) {
+          result += String.fromCharCode(UPPER_A + ((code - UPPER_A + shift) % ALPHABET_LEN));
+          pos++;
+        } else if (code >= LOWER_A && code <= LOWER_Z) {
+          result += String.fromCharCode(LOWER_A + ((code - LOWER_A + shift) % ALPHABET_LEN));
+          pos++;
+        } else {
+          result += str[i];
+        }
+      }
+      return result;
+    }
+
+    function indexOfCoincidence(letters) {
+      const n = letters.length;
+      if (n < 2) return 0;
+      const counts = new Array(ALPHABET_LEN).fill(0);
+      for (const l of letters) counts[l]++;
+      let sum = 0;
+      for (const c of counts) sum += c * (c - 1);
+      return sum / (n * (n - 1));
+    }
+
+    function bestShift(column) {
+      const counts = new Array(ALPHABET_LEN).fill(0);
+      for (const l of column) counts[l]++;
+      let best = 0, bestScore = Infinity;
+      for (let shift = 0; shift < ALPHABET_LEN; shift++) {
+        let score = 0;
+        for (let i = 0; i < ALPHABET_LEN; i++) {
+          const expected = ENGLISH_FREQ[i] * column.length;
+          const observed = counts[(i + shift) % ALPHABET_LEN];
+          score += ((observed - expected) ** 2) / expected;
+        }
+        if (score < bestScore) { bestScore = score; best = shift; }
+      }
+      return best;
+    }
+
+    // Returns the per-length scores too, so the page can chart them.
+    function crack(str) {
+      const letters = [];
+      for (let i = 0; i < str.length; i++) {
+        const code = str.charCodeAt(i) | 0x20;
+        if (code >= LOWER_A && code <= LOWER_Z) letters.push(code - LOWER_A);
+      }
+      const limit = Math.max(1, Math.min(MAX_KEY_LENGTH, Math.floor(letters.length / 2)));
+      const scores = [];
+      for (let len = 1; len <= limit; len++) {
+        let total = 0;
+        for (let col = 0; col < len; col++) {
+          const column = [];
+          for (let i = col; i < letters.length; i += len) column.push(letters[i]);
+          total += indexOfCoincidence(column);
+        }
+        scores.push(total / len);
+      }
+      const top = Math.max(...scores);
+      const keyLength = scores.findIndex((s) => s >= top * 0.9) + 1;
+      let key = '';
+      for (let col = 0; col < keyLength; col++) {
+        const column = [];
+        for (let i = col; i < letters.length; i += keyLength) column.push(letters[i]);
+        key += String.fromCharCode(UPPER_A + bestShift(column));
+      }
+      return { key, text: cipherString(str, keyToShifts(key, -1)), scores, letterCount: letters.length };
+    }
+
+    // UI Elements
+    const keyInput = document.getElementById('keyInput');
+    const keyDisplay = document.getElementById('keyDisplay');
+    const keyHint = document.getElementById('keyHint');
+    const keyMapping = document.getElementById('keyMapping');
+    const inputText = document.getElementById('inputText');
+    const outputText = document.getElementById('outputText');
+    const inputLabel = document.getElementById('inputLabel');
+    const outputLabel = document.getElementById('outputLabel');
+    const inputLength = document.getElementById('inputLength');
+    const foundKey = document.getElementById('foundKey');
+    const crackWarn = document.getElementById('crackWarn');
+    const crackText = document.getElementById('crackText');
+    const iocChart = document.getElementById('iocChart');
+    const iocAxis = document.getElementById('iocAxis');
+    const toast = document.getElementById('toast');
+
+    const btnEncrypt = document.getElementById('btnEncrypt');
+    const btnDecrypt = document.getElementById('btnDecrypt');
+
+    let mode = 'encrypt'; // 'encrypt' or 'decrypt'
+    let lastCrack = null;
+
+    function currentKey() {
+      const key = keyInput.value.trim();
+      return /^[A-Za-z]{1,100}$/.test(key) ? key.toUpperCase() : null;
+    }
+
+    // Shows which key letter lines up with each letter of the input.
+    function updateKeyMapping(text, key) {
+      const shown = text.slice(0, 48);
+      let textRow = '', keyRow = '', pos = 0;
+      for (const ch of shown) {
+        const isLetter = /[A-Za-z]/.test(ch);
+        textRow += isLetter ? ch.toUpperCase() : (ch === ' ' ? '·' : ch);
+        keyRow += isLetter ? key[pos++ % key.length] : ' ';
+      }
+      keyMapping.innerHTML = `
+        <span class="row-label">Text:</span><span class="plain">${escapeHtml(textRow)}</span><br />
+        <span class="row-label">Key:</span><span class="cipher">${escapeHtml(keyRow)}</span>`;
+    }
+
+    function updateConversion() {
+      const text = inputText.value;
+      inputLength.textContent = `${text.length} chars`;
+      const key = currentKey();
+      keyInput.classList.toggle('invalid', !key);
+      keyHint.classList.toggle('error', !key);
+      keyHint.textContent = key ? 'Letters A-Z only. A = shift 0, B = 1 … Z = 25.' : 'The key must be 1-100 letters A-Z, no spaces or digits.';
+      keyDisplay.textContent = `Length: ${key ? key.length : 0}`;
+
+      if (key) {
+        outputText.value = cipherString(text, keyToShifts(key, mode === 'encrypt' ? 1 : -1));
+        updateKeyMapping(text, key);
+      } else {
+        outputText.value = '';
+      }
+      updateCracker(mode === 'encrypt' ? outputText.value : text);
+    }
+
+    function updateCracker(cipher) {
+      if (!/[A-Za-z]/.test(cipher)) {
+        lastCrack = null;
+        foundKey.textContent = '…';
+        crackText.textContent = 'Enter text above to crack its key.';
+        iocChart.innerHTML = iocAxis.innerHTML = '';
+        crackWarn.hidden = true;
+        return;
+      }
+      lastCrack = crack(cipher);
+      foundKey.textContent = lastCrack.key;
+      crackText.textContent = lastCrack.text;
+      crackWarn.hidden = lastCrack.letterCount >= 100;
+
+      const top = Math.max(...lastCrack.scores, 0.0001);
+      iocChart.innerHTML = lastCrack.scores.map((s, i) =>
+        `<div class="ioc-bar${i + 1 === lastCrack.key.length ? ' picked' : ''}" style="height:${(s / top) * 100}%" title="Length ${i + 1}: ${s.toFixed(3)}"></div>`
+      ).join('');
+      iocAxis.innerHTML = lastCrack.scores.map((_, i) => `<span>${i + 1}</span>`).join('');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+      });
+    }
+
+    function showToast(message = 'Copied to clipboard!') {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, message.length > 30 ? 3200 : 1800);
+    }
+
+    function setMode(next) {
+      mode = next;
+      btnEncrypt.classList.toggle('active', mode === 'encrypt');
+      btnDecrypt.classList.toggle('active', mode === 'decrypt');
+      inputLabel.textContent = mode === 'encrypt' ? 'Plaintext Input' : 'Ciphertext Input';
+      outputLabel.textContent = mode === 'encrypt' ? 'Ciphertext Output' : 'Plaintext Output';
+      updateConversion();
+    }
+
+    function setKey(key) {
+      keyInput.value = key;
+      updateConversion();
+    }
+
+    // Event Listeners
+    keyInput.addEventListener('input', updateConversion);
+    inputText.addEventListener('input', updateConversion);
+    btnEncrypt.addEventListener('click', () => setMode('encrypt'));
+    btnDecrypt.addEventListener('click', () => setMode('decrypt'));
+    document.getElementById('btnLemon').addEventListener('click', () => setKey('LEMON'));
+    document.getElementById('btnSecret').addEventListener('click', () => setKey('SECRET'));
+
+    document.getElementById('btnCopyOutput').addEventListener('click', () => {
+      if (outputText.value) copyToClipboard(outputText.value);
+    });
+
+    document.getElementById('btnCopyCrack').addEventListener('click', () => {
+      if (lastCrack) copyToClipboard(lastCrack.text);
+    });
+
+    // Load the cracked key into the decryptor, using the ciphertext as input.
+    document.getElementById('btnUseKey').addEventListener('click', () => {
+      if (!lastCrack) return;
+      if (mode === 'encrypt') inputText.value = outputText.value;
+      keyInput.value = lastCrack.key;
+      setMode('decrypt');
+    });
+
+    // Challenge links: #c=<ciphertext> opens in decrypt mode with a blank
+    // key, so the recipient has to crack it.
+    const btnShare = document.getElementById('btnShare');
+    btnShare.addEventListener('click', async () => {
+      const cipher = mode === 'encrypt' ? outputText.value : inputText.value;
+      if (!cipher.trim()) return;
+      const url = `${location.origin}${location.pathname}#c=${encodeURIComponent(cipher)}`;
+      const shareData = { title: 'Can you crack my Vigenère cipher?', text: 'Can you crack this secret message?', url };
+      if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+        try { await navigator.share(shareData); return; } catch (e) { if (e.name === 'AbortError') return; }
+      }
+      navigator.clipboard.writeText(url).then(() => showToast('Challenge link copied! Shorten it with MiniFyn for click stats.'));
+    });
+
+    function loadChallenge() {
+      const match = location.hash.match(/^#c=(.+)$/);
+      if (!match) return;
+      let cipher;
+      try { cipher = decodeURIComponent(match[1]).slice(0, 1000); } catch (e) { return; }
+      inputText.value = cipher;
+      keyInput.value = 'A';
+      setMode('decrypt');
+      document.querySelector('.cracker-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Initial render
+    updateConversion();
+    loadChallenge();
+  </script>
+</body>
+</html>
