@@ -32,6 +32,13 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://get-your-knowledge-here.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Vigenère Cipher", "item": "https://get-your-knowledge-here.github.io/vigenere-cipher/" }
+        ]
+      },
+      {
         "@type": "WebApplication",
         "@id": "https://get-your-knowledge-here.github.io/vigenere-cipher/#app",
         "name": "Vigenère Cipher Decoder & Encoder",
@@ -129,6 +136,21 @@
       background: var(--surface);
       padding: 1rem 1.5rem;
     }
+
+    .breadcrumbs {
+      max-width: 1080px;
+      width: 100%;
+      margin: 1rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; }
+    .breadcrumbs li + li::before { content: "›"; margin-right: 0.4rem; color: var(--text-muted); }
+    .breadcrumbs a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--accent); }
+    .breadcrumbs [aria-current] { color: var(--text); }
 
     .header-inner {
       max-width: 1080px;
@@ -786,6 +808,10 @@
       </nav>
     </div>
   </header>
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li aria-current="page">Vigenère Cipher</li></ol>
+  </nav>
 
   <main>
     <p class="intro">Encrypt and decrypt text with a <strong>Vigenère keyword cipher</strong>, or paste a secret message and <strong>crack the key automatically</strong> with frequency analysis. Everything runs in your browser; nothing is uploaded.</p>
