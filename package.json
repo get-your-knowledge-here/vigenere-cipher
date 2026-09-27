@@ -1,0 +1,68 @@
+{
+  "name": "@gykh/vigenere-cipher",
+  "version": "1.0.0",
+  "description": "⚡ Fast, zero-dependency Vigenère cipher in Node.js supporting Strings, Buffers, Streams, & key-cracking by frequency analysis.",
+  "main": "index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cipher.js",
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "validate.js",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@11.3.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/get-your-knowledge-here/vigenere-cipher.git"
+  },
+  "keywords": [
+    "vigenere",
+    "vigenere-cipher",
+    "polyalphabetic",
+    "cipher",
+    "cryptography",
+    "cryptanalysis",
+    "frequency-analysis",
+    "kasiski",
+    "encrypt",
+    "decrypt",
+    "encryption",
+    "decryption",
+    "streams",
+    "typescript",
+    "zero-dependencies"
+  ],
+  "author": {
+    "name": "Sylvester Das",
+    "email": "sylvester.das@gmail.com",
+    "url": "https://www.sylvesterdas.com"
+  },
+  "funding": "https://www.buymeacoffee.com/sylvester.das",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/get-your-knowledge-here/vigenere-cipher/issues"
+  },
+  "homepage": "https://github.com/get-your-knowledge-here/vigenere-cipher#readme"
+}
