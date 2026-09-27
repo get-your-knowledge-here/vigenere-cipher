@@ -1,6 +1,6 @@
 {
   "name": "@gykh/vigenere-cipher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "⚡ Fast, zero-dependency Vigenère cipher in Node.js supporting Strings, Buffers, Streams, & key-cracking by frequency analysis.",
   "main": "index.js",
   "types": "./index.d.ts",
@@ -64,5 +64,5 @@
   "bugs": {
     "url": "https://github.com/get-your-knowledge-here/vigenere-cipher/issues"
   },
-  "homepage": "https://github.com/get-your-knowledge-here/vigenere-cipher#readme"
+  "homepage": "https://get-your-knowledge-here.github.io/vigenere-cipher/"
 }

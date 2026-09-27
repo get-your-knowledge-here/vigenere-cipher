@@ -14,7 +14,7 @@
 
 **[Try it live in your browser →](https://get-your-knowledge-here.github.io/vigenere-cipher/)** Encrypt, decrypt and crack the key, no install needed. · **[Watch the 30s video](https://youtube.com/shorts/rZkRROJNB_s)**
 
-More short package videos on [@qckx](https://www.youtube.com/@qckx). Sibling package: [@gykh/caesar-cipher](https://github.com/get-your-knowledge-here/caesar-cipher).
+More short package videos on [@qckx](https://www.youtube.com/@qckx). Sibling package: [@gykh/caesar-cipher](https://github.com/get-your-knowledge-here/caesar-cipher). All packages: [@gykh on npm](https://www.npmjs.com/org/gykh).
 
 ---
 
