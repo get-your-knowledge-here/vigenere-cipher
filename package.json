@@ -1,6 +1,6 @@
 {
   "name": "@gykh/vigenere-cipher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "⚡ Fast, zero-dependency Vigenère cipher in Node.js supporting Strings, Buffers, Streams, & key-cracking by frequency analysis.",
   "main": "index.js",
   "types": "./index.d.ts",
