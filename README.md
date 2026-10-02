@@ -1,6 +1,6 @@
 # @gykh/vigenere-cipher
 
-[![Vigenère Cipher Decoder & Encoder](https://raw.githubusercontent.com/get-your-knowledge-here/vigenere-cipher/main/docs/assets/og-image.jpg)](https://get-your-knowledge-here.github.io/vigenere-cipher/)
+[![Vigenère Cipher Decoder & Encoder](https://raw.githubusercontent.com/get-your-knowledge-here/vigenere-cipher/main/docs/assets/og-image.jpg)](https://gykh.sylvesterdas.com/vigenere-cipher/)
 
 > A fast, zero-dependency Vigenère cipher implementation in Node.js supporting Strings, Buffers, Streams, and key-cracking by frequency analysis.
 
@@ -12,7 +12,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg?style=flat-square)](./package.json)
 
-**[Try it live in your browser →](https://get-your-knowledge-here.github.io/vigenere-cipher/)** Encrypt, decrypt and crack the key, no install needed. · **[Watch the 30s video](https://youtube.com/shorts/rZkRROJNB_s)**
+**[Try it live in your browser →](https://gykh.sylvesterdas.com/vigenere-cipher/)** Encrypt, decrypt and crack the key, no install needed. · **[Watch the 30s video](https://youtube.com/shorts/rZkRROJNB_s)**
 
 More short package videos on [@qckx](https://www.youtube.com/@qckx). Sibling package: [@gykh/caesar-cipher](https://github.com/get-your-knowledge-here/caesar-cipher). All packages: [@gykh on npm](https://www.npmjs.com/org/gykh).
 
