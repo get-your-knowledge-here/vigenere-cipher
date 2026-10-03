@@ -14,7 +14,7 @@
 
 **[Try it live in your browser →](https://gykh.sylvesterdas.com/vigenere-cipher/)** Encrypt, decrypt and crack the key, no install needed. · **[Watch the 30s video](https://youtube.com/shorts/rZkRROJNB_s)**
 
-More short package videos on [@gykhdev](https://www.youtube.com/@gykhdev). Sibling package: [@gykh/caesar-cipher](https://github.com/get-your-knowledge-here/caesar-cipher). All packages: [@gykh on npm](https://www.npmjs.com/org/gykh).
+More short package videos on [@gykhdev](https://www.youtube.com/@gykhdev). Sibling packages: [@gykh/morse](https://github.com/get-your-knowledge-here/morse), [@gykh/enigma](https://github.com/get-your-knowledge-here/enigma), [@gykh/caesar-cipher](https://github.com/get-your-knowledge-here/caesar-cipher), [@gykh/cat-facts](https://github.com/get-your-knowledge-here/cat-facts). All packages: [@gykh on npm](https://www.npmjs.com/org/gykh).
 
 ---
 
